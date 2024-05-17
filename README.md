@@ -83,23 +83,23 @@ To handle valid currencies a backed enumeration class is provided called `Curren
 use Fonil\Severe\Enums\Currency;
 
 $currency = Currency::EUR;				
-echo $currency->value; 			// EUR
-echo $currency->code();			// 978
-echo $currency->name();         // Euro
-echo $currency->decimals();		// 2
+echo $currency->value;       // EUR
+echo $currency->code();      // 978
+echo $currency->name();      // Euro
+echo $currency->decimals();  // 2
 
 $currency = Currency::UYI;
-echo $currency->value; 			// UYI
-echo $currency->code();			// 940
-echo $currency->name();			// Uruguay Peso en Unidades Indexadas (URUIURUI)
-echo $currency->decimals();		// 0
+echo $currency->value;       // UYI
+echo $currency->code();      // 940
+echo $currency->name();      // Uruguay Peso en Unidades Indexadas (URUIURUI)
+echo $currency->decimals();  // 0
 
 // Dynamic instantiation
 $currency = Currency::from('TRY');
-echo $currency->value; 			// TRY
-echo $currency->code();			// 949
-echo $currency->name();			// Turkish Lira
-echo $currency->decimals();		// 2
+echo $currency->value;       // TRY
+echo $currency->code();      // 949
+echo $currency->name();      // Turkish Lira
+echo $currency->decimals();  // 2
 ```
 
 ### Additional Data Types
@@ -142,12 +142,12 @@ $money = TypeMoney::set(TypeFloat::set(123.456), Currency::EUR);
 ```php
 $money = TypeMoney::set(123.456789, 'EUR');
 [$amount, $currency] = $money();
-echo $amount(); 									// 123.46
-echo $currency->value;								// EUR
+echo $amount();                  // 123.46
+echo $currency->value;           // EUR
 
 $money = TypeMoney::set(123.456789, 'CLF');
-echo $money()[0]->__invoke();						// 123.4568
-echo $money()[1]->decimals();						// 4
+echo $money()[0]->__invoke();    // 123.4568
+echo $money()[1]->decimals();    // 4
 ```
 
 
@@ -163,7 +163,7 @@ Only the latest major version receives security fixes.
 
 ### Reporting a Vulnerability
 
-If you discover a security vulnerability within this project, please [open an issue here](https://github.com/fonil/sequence/issues). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this project, please [open an issue here](https://github.com/fonil/severe/issues). All security vulnerabilities will be promptly addressed.
 
 ## License
 
