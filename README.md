@@ -1,4 +1,4 @@
-[![Continuous Integration](https://github.com/fonil/severe/actions/workflows/ci.yml/badge.svg)](https://github.com/fonil/severe/actions/workflows/ci.yml)
+[![Continuous Integration](https://github.com/fonil/severe/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/fonil/severe/actions/workflows/ci.yml)
 
 # Severe
 
