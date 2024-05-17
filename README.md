@@ -26,18 +26,25 @@ composer require fonil/severe
 
 ## Supported Data Types
 
+`Severe` supports the following data types:
+
+| Type       | Category    | Version  |
+| ---------- | ----------- | --------:|
+| Array      | Generic     | 1.0      |
+| Boolean    | Generic     | 1.0      |
+| Closure    | Generic     | 1.0      |
+| Float      | Generic     | 1.0      |
+| Integer    | Generic     | 1.0      |
+| Null       | Generic     | 1.0      |
+| Object     | Generic     | 1.0      |
+| String     | Generic     | 1.0      |
+| Money      | Finances    | 1.0      |
+| Domain     | Internet    | TODO     |
+| Email      | Internet    | TODO     |
+| Document   | File System | TODO     |
+| Image      | File System | TODO     |
+
 ### Generic Data Types
-
-`Severe` supports the following generic data types:
-
-- [Array](#array)
-- [Boolean](#boolean)
-- [Closure](#closure)
-- [Float](#float)
-- [Integer](#integer)
-- [Null](#null)
-- [Object](#object)
-- [String](#string)
 
 #### Usage
 
