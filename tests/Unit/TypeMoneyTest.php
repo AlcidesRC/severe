@@ -158,26 +158,4 @@ final class TypeMoneyTest extends TestCase
             'Negative' => [TypeMoney::set(-123.45, 'USD'), '[-123.45,"USD"]'],
         ];
     }
-
-    // ---------------------------------------------------------------------------------------------------------------
-
-    #[Test]
-    #[DataProvider('dataProviderForFromJson')]
-    public function checkFromJson(string $data, TypeMoney $expected): void
-    {
-        $aux = TypeMoney::fromJson($data);
-
-        self::assertTrue($aux->isEqualTo($expected));
-    }
-
-    /**
-     * @return array<string, array<int, mixed>>
-     */
-    public static function dataProviderForFromJson(): array
-    {
-        return [
-            'Positive' => ['[123.45,"EUR"]', TypeMoney::set(123.45, 'EUR')],
-            'Negative' => ['[-123.45,"USD"]', TypeMoney::set(-123.45, 'USD')],
-        ];
-    }
 }
