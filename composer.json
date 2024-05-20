@@ -16,7 +16,8 @@
         "source": "https://github.com/fonil/severe"
     },
     "require": {
-        "php": "^8.3"
+        "php": "^8.3",
+        "swaggest/json-schema": "^0.12.42"
     },
     "require-dev": {
         "php-parallel-lint/php-console-highlighter": "^1.0",

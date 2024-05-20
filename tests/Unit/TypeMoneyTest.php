@@ -8,12 +8,12 @@ use DateTime;
 use Fonil\Severe\Enums\Currency;
 use Fonil\Severe\TypeFloat;
 use Fonil\Severe\TypeMoney;
+use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use SlopeIt\ClockMock\ClockMock;
-use TypeError;
 
 #[CoversClass(\Fonil\Severe\TypeMoney::class)]
 #[CoversClass(\Fonil\Severe\TypeFloat::class)]
@@ -156,6 +156,48 @@ final class TypeMoneyTest extends TestCase
         return [
             'Positive' => [TypeMoney::set(123.45, 'EUR'), '[123.45,"EUR"]'],
             'Negative' => [TypeMoney::set(-123.45, 'USD'), '[-123.45,"USD"]'],
+        ];
+    }
+
+    // ---------------------------------------------------------------------------------------------------------------
+
+    #[Test]
+    #[DataProvider('dataProviderForFromJson')]
+    public function checkFromJson(string $json, TypeMoney $expected): void
+    {
+        self::assertTrue($expected->isEqualTo(TypeMoney::fromJson($json)));
+    }
+
+    /**
+     * @return array<string, array<int, mixed>>
+     */
+    public static function dataProviderForFromJson(): array
+    {
+        return [
+            'Positive' => ['[123.45,"EUR"]', TypeMoney::set(123.45, 'EUR')],
+            'Negative' => ['[-123.45,"USD"]', TypeMoney::set(-123.45, 'USD')],
+        ];
+    }
+
+    // ---------------------------------------------------------------------------------------------------------------
+
+    #[Test]
+    #[DataProvider('dataProviderForFromJsonWrongSchema')]
+    public function checkFromJsonWrongSchema(string $json): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        TypeMoney::fromJson($json);
+    }
+
+    /**
+     * @return array<string, array<int, mixed>>
+     */
+    public static function dataProviderForFromJsonWrongSchema(): array
+    {
+        return [
+            'Unvalid Schema'   => ['[123.45,"EUR","XXX"]'],
+            'Unvalid Amount'   => ['["1e2","EUR"]'],
+            'Unvalid Currency' => ['[123.45,"XXX"]'],
         ];
     }
 }
