@@ -47,4 +47,18 @@ final class TypeMoney
     {
         return [$this->amount, $this->currency];
     }
+
+    public function toJson(): string
+    {
+        return json_encode([
+            ($this->amount)(),
+            $this->currency->value
+        ]);
+    }
+
+    public static function fromJson(string $data): self
+    {
+        [$amount, $currency] = json_decode($data, true);
+        return self::set($amount, $currency);
+    }
 }
