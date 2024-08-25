@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Fonil\Severe;
+namespace Severe;
 
 final class TypeString
 {

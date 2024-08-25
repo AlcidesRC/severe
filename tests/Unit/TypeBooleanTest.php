@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Fonil\Severe\Tests\Unit;
+namespace Severe\Tests\Unit;
 
 use DateTime;
-use Fonil\Severe\Tests\Stubs\Foo;
-use Fonil\Severe\TypeBoolean;
+use Severe\Tests\Stubs\Foo;
+use Severe\TypeBoolean;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
@@ -15,7 +15,7 @@ use SlopeIt\ClockMock\ClockMock;
 use stdClass;
 use TypeError;
 
-#[CoversClass(\Fonil\Severe\TypeBoolean::class)]
+#[CoversClass(\Severe\TypeBoolean::class)]
 final class TypeBooleanTest extends TestCase
 {
     protected function setUp(): void

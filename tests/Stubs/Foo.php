@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Fonil\Severe\Tests\Stubs;
+namespace Severe\Tests\Stubs;
 
 class Foo
 {

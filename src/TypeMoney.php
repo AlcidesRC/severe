@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Fonil\Severe;
+namespace Severe;
 
 use Exception;
-use Fonil\Severe\Enums\Currency;
+use Severe\Enums\Currency;
 use InvalidArgumentException;
 use Swaggest\JsonSchema\Exception\ArrayException;
 use Swaggest\JsonSchema\Exception\StringException;

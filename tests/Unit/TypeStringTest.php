@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Fonil\Severe\Tests\Unit;
+namespace Severe\Tests\Unit;
 
 use DateTime;
-use Fonil\Severe\Tests\Stubs\Foo;
-use Fonil\Severe\TypeString;
+use Severe\Tests\Stubs\Foo;
+use Severe\TypeString;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
@@ -15,7 +15,7 @@ use SlopeIt\ClockMock\ClockMock;
 use stdClass;
 use TypeError;
 
-#[CoversClass(\Fonil\Severe\TypeString::class)]
+#[CoversClass(\Severe\TypeString::class)]
 final class TypeStringTest extends TestCase
 {
     private const CHARACTERS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';

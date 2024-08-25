@@ -56,9 +56,9 @@ composer require fonil/severe
 > In case of invalid argument type a `TypeError` is thrown
 
 ```php
-use Fonil\Severe\TypeString;
-use Fonil\Severe\TypeBoolean;
-use Fonil\Severe\TypeNull;
+use Severe\TypeString;
+use Severe\TypeBoolean;
+use Severe\TypeNull;
 
 $string = TypeString::set($var);
 $bool = TypeBoolean::set($flag);
@@ -88,7 +88,7 @@ To handle valid currencies a backed enumeration class is provided called `Curren
 ###### Examples
 
 ```php
-use Fonil\Severe\Enums\Currency;
+use Severe\Enums\Currency;
 
 $currency = Currency::EUR;				
 echo $currency->value;       // EUR
@@ -126,9 +126,9 @@ Additionally, `Severe` provides a custom data type to handle money entities. Tho
 All of those ways are supported and equivalents:
 
 ```php
-use Fonil\Severe\Enums\Currency;
-use Fonil\Severe\TypeFloat;
-use Fonil\Severe\TypeMoney;
+use Severe\Enums\Currency;
+use Severe\TypeFloat;
+use Severe\TypeMoney;
 
 $money = TypeMoney::set(123.456, 'eur');
 $money = TypeMoney::set(123.456, Currency::EUR);

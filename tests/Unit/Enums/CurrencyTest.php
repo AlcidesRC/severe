@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Fonil\Severe\Tests\Unit\Enums;
+namespace Severe\Tests\Unit\Enums;
 
 use DateTime;
-use Fonil\Severe\Enums\Currency;
+use Severe\Enums\Currency;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use SlopeIt\ClockMock\ClockMock;
 
-#[CoversClass(\Fonil\Severe\Enums\Currency::class)]
+#[CoversClass(\Severe\Enums\Currency::class)]
 final class CurrencyTest extends TestCase
 {
     protected function setUp(): void

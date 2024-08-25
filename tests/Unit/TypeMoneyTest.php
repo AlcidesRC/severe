@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Fonil\Severe\Tests\Unit;
+namespace Severe\Tests\Unit;
 
 use DateTime;
-use Fonil\Severe\Enums\Currency;
-use Fonil\Severe\TypeFloat;
-use Fonil\Severe\TypeMoney;
+use Severe\Enums\Currency;
+use Severe\TypeFloat;
+use Severe\TypeMoney;
 use InvalidArgumentException;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
@@ -15,9 +15,9 @@ use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use SlopeIt\ClockMock\ClockMock;
 
-#[CoversClass(\Fonil\Severe\TypeMoney::class)]
-#[CoversClass(\Fonil\Severe\TypeFloat::class)]
-#[CoversClass(\Fonil\Severe\Enums\Currency::class)]
+#[CoversClass(\Severe\TypeMoney::class)]
+#[CoversClass(\Severe\TypeFloat::class)]
+#[CoversClass(\Severe\Enums\Currency::class)]
 final class TypeMoneyTest extends TestCase
 {
     protected function setUp(): void

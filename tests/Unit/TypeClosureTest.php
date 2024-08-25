@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Fonil\Severe\Tests\Unit;
+namespace Severe\Tests\Unit;
 
 use Closure;
 use DateTime;
-use Fonil\Severe\Tests\Stubs\Foo;
-use Fonil\Severe\TypeClosure;
+use Severe\Tests\Stubs\Foo;
+use Severe\TypeClosure;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
@@ -16,7 +16,7 @@ use SlopeIt\ClockMock\ClockMock;
 use stdClass;
 use TypeError;
 
-#[CoversClass(\Fonil\Severe\TypeClosure::class)]
+#[CoversClass(\Severe\TypeClosure::class)]
 final class TypeClosureTest extends TestCase
 {
     protected function setUp(): void
