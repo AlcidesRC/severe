@@ -1,5 +1,5 @@
 {
-    "name": "fonil/severe",
+    "name": "alcidesrc/severe",
     "description": "Even more severe with strict types in PHP",
     "type": "library",
     "keywords": ["php", "strict types", "clean code", "best practices"],
@@ -12,8 +12,8 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/fonil/severe/issues",
-        "source": "https://github.com/fonil/severe"
+        "issues": "https://github.com/alcidesrc/severe/issues",
+        "source": "https://github.com/alcidesrc/severe"
     },
     "require": {
         "php": "^8.3",
