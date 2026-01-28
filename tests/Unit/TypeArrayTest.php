@@ -4,32 +4,18 @@ declare(strict_types=1);
 
 namespace Severe\Tests\Unit;
 
-use DateTime;
 use Severe\Tests\Stubs\Foo;
 use Severe\TypeArray;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use SlopeIt\ClockMock\ClockMock;
 use stdClass;
 use TypeError;
 
 #[CoversClass(\Severe\TypeArray::class)]
 final class TypeArrayTest extends TestCase
 {
-    protected function setUp(): void
-    {
-        ClockMock::freeze(new DateTime('2024-01-01 00:00:00'));
-    }
-
-    protected function tearDown(): void
-    {
-        ClockMock::reset();
-    }
-
-    // ---------------------------------------------------------------------------------------------------------------
-
     /**
      * @param array<int|string, mixed> $value
      */

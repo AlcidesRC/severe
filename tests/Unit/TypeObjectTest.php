@@ -12,25 +12,12 @@ use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use SlopeIt\ClockMock\ClockMock;
 use stdClass;
 use TypeError;
 
 #[CoversClass(\Severe\TypeObject::class)]
 final class TypeObjectTest extends TestCase
 {
-    protected function setUp(): void
-    {
-        ClockMock::freeze(new DateTime('2024-01-01 00:00:00'));
-    }
-
-    protected function tearDown(): void
-    {
-        ClockMock::reset();
-    }
-
-    // ---------------------------------------------------------------------------------------------------------------
-
     #[Test]
     #[DataProvider('dataProviderForSet')]
     public function checkSet(object $value): void

@@ -5,32 +5,18 @@ declare(strict_types=1);
 namespace Severe\Tests\Unit;
 
 use Closure;
-use DateTime;
 use Severe\Tests\Stubs\Foo;
 use Severe\TypeClosure;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use SlopeIt\ClockMock\ClockMock;
 use stdClass;
 use TypeError;
 
 #[CoversClass(\Severe\TypeClosure::class)]
 final class TypeClosureTest extends TestCase
 {
-    protected function setUp(): void
-    {
-        ClockMock::freeze(new DateTime('2024-01-01 00:00:00'));
-    }
-
-    protected function tearDown(): void
-    {
-        ClockMock::reset();
-    }
-
-    // ---------------------------------------------------------------------------------------------------------------
-
     #[Test]
     #[DataProvider('dataProviderForSet')]
     public function checkSet(Closure $value): void

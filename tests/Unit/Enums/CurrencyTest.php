@@ -4,29 +4,15 @@ declare(strict_types=1);
 
 namespace Severe\Tests\Unit\Enums;
 
-use DateTime;
 use Severe\Enums\Currency;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use SlopeIt\ClockMock\ClockMock;
 
 #[CoversClass(\Severe\Enums\Currency::class)]
 final class CurrencyTest extends TestCase
 {
-    protected function setUp(): void
-    {
-        ClockMock::freeze(new DateTime('2024-01-01 00:00:00'));
-    }
-
-    protected function tearDown(): void
-    {
-        ClockMock::reset();
-    }
-
-    // ---------------------------------------------------------------------------------------------------------------
-
     #[Test]
     #[DataProvider('dataProviderForSymbols')]
     public function checkSymbols(Currency $currency, string $expected): void

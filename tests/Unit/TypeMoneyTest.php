@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Severe\Tests\Unit;
 
-use DateTime;
 use Severe\Enums\Currency;
 use Severe\TypeFloat;
 use Severe\TypeMoney;
@@ -13,25 +12,12 @@ use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use SlopeIt\ClockMock\ClockMock;
 
 #[CoversClass(\Severe\TypeMoney::class)]
 #[CoversClass(\Severe\TypeFloat::class)]
 #[CoversClass(\Severe\Enums\Currency::class)]
 final class TypeMoneyTest extends TestCase
 {
-    protected function setUp(): void
-    {
-        ClockMock::freeze(new DateTime('2024-01-01 00:00:00'));
-    }
-
-    protected function tearDown(): void
-    {
-        ClockMock::reset();
-    }
-
-    // ---------------------------------------------------------------------------------------------------------------
-
     #[Test]
     #[DataProvider('dataProviderForSet')]
     public function checkSet(TypeFloat|float $value, Currency|string $currency): void
